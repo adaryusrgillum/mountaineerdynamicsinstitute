@@ -89,7 +89,7 @@ buttons.forEach(button => {
 });
 
 // Dynamic stat counter animation
-function animateCounter(element, target, duration = 2000) {
+function animateCounter(element, target, suffix = '+', duration = 2000) {
     const start = 0;
     const increment = target / (duration / 16);
     let current = start;
@@ -97,10 +97,10 @@ function animateCounter(element, target, duration = 2000) {
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
-            element.textContent = target + (element.textContent.includes('%') ? '%' : '+');
+            element.textContent = target + suffix;
             clearInterval(timer);
         } else {
-            element.textContent = Math.floor(current) + (element.textContent.includes('%') ? '%' : '+');
+            element.textContent = Math.floor(current) + suffix;
         }
     }, 16);
 }
@@ -115,11 +115,11 @@ const statsObserver = new IntersectionObserver((entries) => {
                 const hasPercent = text.includes('%');
                 const hasPlus = text.includes('+');
                 const value = parseInt(text.replace(/[^0-9]/g, ''));
+                const suffix = hasPercent ? '%' : hasPlus ? '+' : '';
                 
                 if (value && !stat.dataset.animated) {
                     stat.dataset.animated = 'true';
-                    stat.textContent = '0' + (hasPercent ? '%' : hasPlus ? '+' : '');
-                    animateCounter(stat, value);
+                    animateCounter(stat, value, suffix);
                 }
             });
             statsObserver.unobserve(entry.target);
