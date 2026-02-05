@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountaineer Dynamics Institute | Become Your Family's First Responder</title>
+    <meta name="description" content="Professional firearms training in West Virginia. Handgun basics, CCW courses, rifle dynamics, and church security training. Highest rated on the East Coast.">
+    <meta name="keywords" content="firearms training, CCW, concealed carry, West Virginia, Charleston WV, rifle training, church security">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mountaineer Dynamics Institute">
+    <meta property="og:description" content="Become Your Family's First Responder - Professional firearms training in WV">
+    <meta property="og:image" content="Gemini_Generated_Image_3tiaty3tiaty3tia.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="/" class="logo">
+                <div>
+                    <div class="logo-text">MDI</div>
+                    <div class="logo-tagline">Mountaineer Dynamics</div>
+                </div>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="pages/schedule.html">Schedule</a></li>
+                <li><a href="pages/church-security.html">Church Security</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/intel.html">Intel</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="nav-cta">
+                <a href="tel:304-406-3045" class="nav-phone">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    304-406-3045
+                </a>
+                <a href="pages/schedule.html" class="btn btn-primary">Book Now</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileClose">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="pages/schedule.html">Schedule</a></li>
+            <li><a href="pages/church-security.html">Church Security</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/intel.html">Intel</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+            <li><a href="tel:304-406-3045" class="text-gold">304-406-3045</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-carousel" id="heroCarousel">
+            <div class="hero-slide active">
+                <img src="Gemini_Generated_Image_3tiaty3tiaty3tia.png" alt="Firearms Training">
+            </div>
+            <div class="hero-slide">
+                <img src="Gemini_Generated_Image_c8jjxpc8jjxpc8jj.png" alt="Rifle Training">
+            </div>
+            <div class="hero-slide">
+                <img src="Gemini_Generated_Image_sqjtyqsqjtyqsqjt.png" alt="Concealed Carry">
+            </div>
+            <div class="hero-slide">
+                <img src="Gemini_Generated_Image_thd24pthd24pthd2.png" alt="Security Training">
+            </div>
+            <div class="hero-slide">
+                <img src="Gemini_Generated_Image_vt54ubvt54ubvt54 (1).png" alt="Private Lessons">
+            </div>
+        </div>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <span class="hero-badge">West Virginia's Premier Training Academy</span>
+            <h1 class="hero-title">
+                Become Your Family's
+                <span>First Responder</span>
+            </h1>
+            <p class="hero-subtitle">Professional firearms training for civilians, security teams & law enforcement. USCCA & NRA certified instruction.</p>
+            <div class="hero-buttons">
+                <a href="pages/schedule.html" class="btn btn-primary btn-lg">View Schedule</a>
+                <a href="#courses" class="btn btn-outline btn-lg">Explore Courses</a>
+            </div>
+        </div>
+        
+        <div class="carousel-arrows">
+            <button class="carousel-arrow" onclick="changeSlide(-1)" aria-label="Previous">&#10094;</button>
+            <button class="carousel-arrow" onclick="changeSlide(1)" aria-label="Next">&#10095;</button>
+        </div>
+        
+        <div class="carousel-controls">
+            <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+            <span class="carousel-dot" onclick="goToSlide(1)"></span>
+            <span class="carousel-dot" onclick="goToSlide(2)"></span>
+            <span class="carousel-dot" onclick="goToSlide(3)"></span>
+            <span class="carousel-dot" onclick="goToSlide(4)"></span>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">
+                    <span class="counter" data-target="5.0">5.0</span>★
+                </div>
+                <div class="stat-label">Google Rating</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">
+                    <span class="counter" data-target="1000">1000</span>+
+                </div>
+                <div class="stat-label">Students Trained</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">
+                    <span class="counter" data-target="15">15</span>+
+                </div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">
+                    <span class="counter" data-target="3">3</span>
+                </div>
+                <div class="stat-label">WV Locations</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Courses Section -->
+    <section class="section section-dark" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Train With The Best</span>
+                <h2 class="section-title">Upcoming Courses</h2>
+                <p class="section-subtitle">Reserve your spot in our next training session. Limited seats available.</p>
+            </div>
+            
+            <div class="courses-grid">
+                <!-- Course Card 1 -->
+                <div class="course-card">
+                    <div class="course-card-image">
+                        <img src="Gemini_Generated_Image_thd24pthd24pthd2.png" alt="Rifle Dynamics">
+                        <span class="course-card-badge">Feb 7-8</span>
+                    </div>
+                    <div class="course-card-content">
+                        <span class="course-card-category">Rifle Training</span>
+                        <h3 class="course-card-title">Rifle Dynamics Level 1</h3>
+                        <p class="course-card-desc">Master precision shooting and tactical rifle handling with professional instruction.</p>
+                        <div class="course-card-meta">
+                            <span class="course-card-price">$300</span>
+                            <span class="course-card-date">Charleston, WV</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 2 -->
+                <div class="course-card">
+                    <div class="course-card-image">
+                        <img src="Gemini_Generated_Image_3tiaty3tiaty3tia.png" alt="Concealed Carry">
+                        <span class="course-card-badge">Mar 7</span>
+                    </div>
+                    <div class="course-card-content">
+                        <span class="course-card-category">CCW</span>
+                        <h3 class="course-card-title">Concealed Carry Fundamentals</h3>
+                        <p class="course-card-desc">Defensive skills for everyday protection. Legal knowledge and practical training.</p>
+                        <div class="course-card-meta">
+                            <span class="course-card-price">$150</span>
+                            <span class="course-card-date">Albright, WV</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div class="course-card">
+                    <div class="course-card-image">
+                        <img src="Gemini_Generated_Image_c8jjxpc8jjxpc8jj.png" alt="Church Security">
+                        <span class="course-card-badge">May 2-3</span>
+                    </div>
+                    <div class="course-card-content">
+                        <span class="course-card-category">Security</span>
+                        <h3 class="course-card-title">Church & Business Security</h3>
+                        <p class="course-card-desc">Professional security team training for houses of worship and businesses.</p>
+                        <div class="course-card-meta">
+                            <span class="course-card-price">$400</span>
+                            <span class="course-card-date">Buckhannon, WV</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 4 -->
+                <div class="course-card">
+                    <div class="course-card-image">
+                        <img src="Gemini_Generated_Image_sqjtyqsqjtyqsqjt.png" alt="Private Lessons">
+                        <span class="course-card-badge">Available</span>
+                    </div>
+                    <div class="course-card-content">
+                        <span class="course-card-category">Private</span>
+                        <h3 class="course-card-title">Private Shooting Lessons</h3>
+                        <p class="course-card-desc">One-on-one personalized instruction tailored to your skill level and goals.</p>
+                        <div class="course-card-meta">
+                            <span class="course-card-price">$100/hr</span>
+                            <span class="course-card-date">All Locations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-3">
+                <a href="pages/schedule.html" class="btn btn-primary btn-lg">View Full Schedule</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Tracks Section -->
+    <section class="section section-charcoal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Choose Your Path</span>
+                <h2 class="section-title">Training Tracks</h2>
+                <p class="section-subtitle">Structured progression from beginner to advanced across three disciplines.</p>
+            </div>
+            
+            <div class="tracks-grid">
+                <!-- Handgun Track -->
+                <div class="track-card">
+                    <div class="track-icon">🔫</div>
+                    <h3 class="track-title">Handgun Progression</h3>
+                    <p class="track-desc">Master handgun fundamentals through our comprehensive 3-course progression system.</p>
+                    <ul class="track-courses">
+                        <li>Handgun Basics (Course 1)</li>
+                        <li>CCW Legalities (Course 2)</li>
+                        <li>Advanced Handgun (Course 3)</li>
+                    </ul>
+                    <a href="pages/courses.html#handgun" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <!-- Rifle Track -->
+                <div class="track-card">
+                    <div class="track-icon">🎯</div>
+                    <h3 class="track-title">Rifle Dynamics</h3>
+                    <p class="track-desc">Precision rifle training from fundamentals to long-range tactical operations.</p>
+                    <ul class="track-courses">
+                        <li>Rifle Dynamics Level 1</li>
+                        <li>Rifle Dynamics Level 2</li>
+                        <li>Long-Range Precision</li>
+                    </ul>
+                    <a href="pages/courses.html#rifle" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <!-- Security Track -->
+                <div class="track-card">
+                    <div class="track-icon">🛡️</div>
+                    <h3 class="track-title">Security Training</h3>
+                    <p class="track-desc">Specialized training for church security teams and business protection officers.</p>
+                    <ul class="track-courses">
+                        <li>Security Team Fundamentals</li>
+                        <li>Threat Assessment</li>
+                        <li>Active Shooter Response</li>
+                    </ul>
+                    <a href="pages/church-security.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Church Security Feature Section -->
+    <section class="church-section">
+        <div class="church-content">
+            <span class="section-label">Specialized Training</span>
+            <h2 class="church-title">Protect Your <span>Congregation</span></h2>
+            <p class="church-desc">
+                In today's world, proactive security isn't optional—it's essential. Our church security training 
+                program equips your team with the knowledge, skills, and confidence to protect your congregation 
+                while maintaining a welcoming environment.
+            </p>
+            <div class="church-features">
+                <div class="church-feature">
+                    <span class="church-feature-icon">✓</span>
+                    <span>Threat Assessment</span>
+                </div>
+                <div class="church-feature">
+                    <span class="church-feature-icon">✓</span>
+                    <span>Emergency Response</span>
+                </div>
+                <div class="church-feature">
+                    <span class="church-feature-icon">✓</span>
+                    <span>De-escalation Tactics</span>
+                </div>
+                <div class="church-feature">
+                    <span class="church-feature-icon">✓</span>
+                    <span>Custom Security Plans</span>
+                </div>
+            </div>
+            <div>
+                <a href="pages/church-security.html" class="btn btn-primary btn-lg">Get Security Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What Our Students Say</span>
+                <h2 class="section-title">Testimonials</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">
+                        The instructors at MDI are world-class. Steven's attention to detail and patience made me 
+                        feel confident holding a firearm for the first time. I recommend this to everyone.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AN</div>
+                        <div>
+                            <div class="testimonial-name">Alex N.</div>
+                            <div class="testimonial-role">CCW Student</div>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">
+                        Our church security team is now fully prepared thanks to the comprehensive training. 
+                        The scenarios they ran were eye-opening and incredibly valuable.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LD</div>
+                        <div>
+                            <div class="testimonial-name">Lisa D.</div>
+                            <div class="testimonial-role">Church Security Director</div>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">
+                        I've been shooting for 20 years and still learned new techniques in the Rifle Dynamics 
+                        course. Professional, safe, and highly effective training.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MR</div>
+                        <div>
+                            <div class="testimonial-name">Michael R.</div>
+                            <div class="testimonial-role">Rifle Student</div>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Intel (Blog) Section -->
+    <section class="section section-charcoal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Stay Informed</span>
+                <h2 class="section-title">Latest Intel</h2>
+                <p class="section-subtitle">News, tips, and legal updates from our instructors.</p>
+            </div>
+            
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="Gemini_Generated_Image_vt54ubvt54ubvt54 (1).png" alt="Winter Safety">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Safety</span>
+                        <h3 class="blog-card-title">Winter Demands a Ready Mindset</h3>
+                        <p class="blog-card-excerpt">Cold weather brings unique challenges for concealed carriers. Here's how to stay prepared...</p>
+                        <div class="blog-card-date">January 15, 2026</div>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="Gemini_Generated_Image_3tiaty3tiaty3tia.png" alt="Nebraska Laws">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Legal</span>
+                        <h3 class="blog-card-title">Nebraska Firearm Law Changes 2026</h3>
+                        <p class="blog-card-excerpt">Important updates to reciprocity agreements that affect WV permit holders traveling to Nebraska...</p>
+                        <div class="blog-card-date">January 8, 2026</div>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="Gemini_Generated_Image_thd24pthd24pthd2.png" alt="Self Defense Case">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Legal</span>
+                        <h3 class="blog-card-title">WV Self-Defense Case Breakdown</h3>
+                        <p class="blog-card-excerpt">Analysis of recent court decisions and what they mean for lawful self-defense in West Virginia...</p>
+                        <div class="blog-card-date">December 20, 2025</div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-3">
+                <a href="pages/intel.html" class="btn btn-outline btn-lg">Read More Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Questions?</span>
+                <h2 class="section-title">Frequently Asked</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I sign up for a course?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            You can register online through our schedule page, call us at 304-406-3045, or email us directly. 
+                            A deposit of $50 is required to reserve your spot, with the remaining balance due on the day of training.
+                            We accept all major credit cards, cash, and checks.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is your refund policy?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Full refunds are available up to 7 days before the course date. Within 7 days, we offer a 
+                            credit toward a future course. No-shows forfeit their deposit. For private lessons, 24-hour 
+                            notice is required for rescheduling.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I need to own a firearm?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            No! We provide rental firearms for all courses. Just let us know when you register. 
+                            Ammunition is sold separately at the range. If you have your own firearm, you're welcome 
+                            to use it (we'll inspect it for safety before class).
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do churches enroll their security teams?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Contact us for a free security assessment. We'll visit your facility, evaluate your needs, 
+                            and create a custom training program. Group discounts are available for teams of 4+. 
+                            Call 304-406-3045 or fill out our church security inquiry form.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-text">MDI</div>
+                <p class="footer-desc">
+                    Mountaineer Dynamics Institute provides professional firearms training for 
+                    civilians, security teams, and law enforcement across West Virginia.
+                </p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="YouTube">YT</a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="pages/courses.html">All Courses</a></li>
+                    <li><a href="pages/schedule.html">Schedule</a></li>
+                    <li><a href="pages/church-security.html">Church Security</a></li>
+                    <li><a href="pages/about.html">About Us</a></li>
+                    <li><a href="pages/intel.html">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-title">Training</h4>
+                <ul class="footer-links">
+                    <li><a href="pages/courses.html#handgun">Handgun Basics</a></li>
+                    <li><a href="pages/courses.html#ccw">CCW Courses</a></li>
+                    <li><a href="pages/courses.html#rifle">Rifle Dynamics</a></li>
+                    <li><a href="pages/courses.html#private">Private Lessons</a></li>
+                    <li><a href="pages/courses.html#multistate">Multi-State CCW</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <span class="footer-contact-icon">📍</span>
+                        <span>Charleston, Albright &<br>Buckhannon, WV</span>
+                    </li>
+                    <li>
+                        <span class="footer-contact-icon">📞</span>
+                        <a href="tel:304-406-3045">304-406-3045</a>
+                    </li>
+                    <li>
+                        <span class="footer-contact-icon">✉️</span>
+                        <a href="mailto:info@mountaineerdynamics.com">info@mountaineerdynamics.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="footer-copyright">
+                &copy; 2026 Mountaineer Dynamics Institute. All rights reserved.
+            </p>
+            <div class="footer-legal">
+                <a href="pages/legal/privacy.html">Privacy Policy</a>
+                <a href="pages/legal/terms.html">Terms of Service</a>
+                <a href="pages/legal/refunds.html">Refund Policy</a>
+                <a href="pages/legal/waiver.html">Liability Waiver</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

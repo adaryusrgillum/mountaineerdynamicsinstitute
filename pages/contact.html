@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Mountaineer Dynamics Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .contact-hero {
+            background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95));
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+        }
+        @media (max-width: 992px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-card {
+            background: var(--mdi-gray-dark);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            gap: 1rem;
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(201, 169, 97, 0.2);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .contact-card h4 {
+            color: var(--mdi-gold);
+            margin-bottom: 0.25rem;
+        }
+        .contact-card p {
+            color: var(--mdi-gray-light);
+            font-size: 0.95rem;
+        }
+        .contact-card a {
+            color: var(--mdi-white);
+            text-decoration: none;
+        }
+        .contact-card a:hover {
+            color: var(--mdi-gold);
+        }
+        .contact-form {
+            background: var(--mdi-gray-dark);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+        }
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .hours-table td {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--mdi-gray);
+        }
+        .hours-table td:first-child {
+            color: var(--mdi-gray-light);
+        }
+        .hours-table td:last-child {
+            text-align: right;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--mdi-gray);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: all var(--transition-base);
+            text-decoration: none;
+        }
+        .social-link:hover {
+            background: var(--mdi-gold);
+        }
+        .map-container {
+            background: var(--mdi-gray);
+            border-radius: var(--radius-md);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--mdi-gray-light);
+            margin-top: 1.5rem;
+        }
+        .faq-mini {
+            margin-top: 3rem;
+        }
+        .faq-mini-item {
+            background: var(--mdi-gray-dark);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+        }
+        .faq-mini-item h4 {
+            color: var(--mdi-gold);
+            margin-bottom: 0.5rem;
+        }
+        .faq-mini-item p {
+            color: var(--mdi-gray-light);
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="logo">
+                <div>
+                    <div class="logo-text">MDI</div>
+                    <div class="logo-tagline">Mountaineer Dynamics</div>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="schedule.html" class="nav-link">Schedule</a>
+                <a href="church-security.html" class="nav-link">Church Security</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="cart.html" class="btn btn-outline btn-sm">Cart (<span id="cartCount">0</span>)</a>
+                <a href="schedule.html" class="btn btn-primary btn-sm">Book Training</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 style="font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4rem);">
+                GET IN <span class="gold">TOUCH</span>
+            </h1>
+            <p style="font-size: 1.1rem; color: var(--mdi-gray-light); max-width: 600px; margin: 1rem auto;">
+                Questions about our courses? Want to schedule private training? We're here to help.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:304-406-3045">304-406-3045</a></p>
+                            <p style="font-size: 0.85rem;">Mon-Sat 9AM-6PM ET</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:train@mountaineerdynamics.com">train@mountaineerdynamics.com</a></p>
+                            <p style="font-size: 0.85rem;">We respond within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Training Location</h4>
+                            <p>Morgantown, WV 26505</p>
+                            <p style="font-size: 0.85rem;">Exact address provided after booking</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card" style="flex-direction: column;">
+                        <h4 style="color: var(--mdi-gold); margin-bottom: 1rem;">Office Hours</h4>
+                        <table class="hours-table">
+                            <tr>
+                                <td>Monday - Friday</td>
+                                <td>9:00 AM - 6:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>9:00 AM - 4:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>Closed</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="contact-card" style="flex-direction: column;">
+                        <h4 style="color: var(--mdi-gold); margin-bottom: 0.5rem;">Follow Us</h4>
+                        <p>Stay updated on classes and training tips</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link">📘</a>
+                            <a href="#" class="social-link">📸</a>
+                            <a href="#" class="social-link">🎥</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem;">
+                        SEND US A MESSAGE
+                    </h2>
+                    
+                    <form id="contactForm">
+                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">First Name *</label>
+                                <input type="text" class="form-input" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name *</label>
+                                <input type="text" class="form-input" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email *</label>
+                            <input type="email" class="form-input" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-input" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Subject *</label>
+                            <select class="form-select" name="subject" required>
+                                <option value="">Select a topic...</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="courses">Course Questions</option>
+                                <option value="private">Private Lessons</option>
+                                <option value="group">Group/Corporate Training</option>
+                                <option value="church">Church Security Program</option>
+                                <option value="booking">Booking/Scheduling</option>
+                                <option value="refund">Refund Request</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Message *</label>
+                            <textarea class="form-textarea" name="message" rows="5" required 
+                                placeholder="How can we help you?"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;">
+                                <input type="checkbox" name="newsletter" style="margin-top: 0.25rem;">
+                                <span style="color: var(--mdi-gray-light); font-size: 0.9rem;">
+                                    Subscribe to our newsletter for training tips and course updates
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            Send Message →
+                        </button>
+                    </form>
+                    
+                    <div class="map-container">
+                        <div style="text-align: center;">
+                            <p style="font-size: 2rem; margin-bottom: 0.5rem;">🗺️</p>
+                            <p>Interactive map coming soon</p>
+                            <p style="font-size: 0.85rem;">Training locations in Morgantown & Fairmont</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick FAQ -->
+            <div class="faq-mini">
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+                    QUICK <span class="gold">ANSWERS</span>
+                </h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                    <div class="faq-mini-item">
+                        <h4>Do I need to bring my own firearm?</h4>
+                        <p>Not for beginner courses. We provide rental firearms for most classes. Check the course description for specific requirements.</p>
+                    </div>
+                    <div class="faq-mini-item">
+                        <h4>What if I need to reschedule?</h4>
+                        <p>Free rescheduling up to 7 days before your class. See our refund policy for details on late changes.</p>
+                    </div>
+                    <div class="faq-mini-item">
+                        <h4>Are your instructors certified?</h4>
+                        <p>Yes! All instructors are NRA certified with backgrounds in military, law enforcement, or competitive shooting.</p>
+                    </div>
+                    <div class="faq-mini-item">
+                        <h4>Do you offer group discounts?</h4>
+                        <p>Yes! Groups of 4+ receive 10% off. Contact us for corporate and church group pricing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div>
+                            <div class="logo-text">MDI</div>
+                            <div class="logo-tagline">Mountaineer Dynamics</div>
+                        </div>
+                    </div>
+                    <p>Professional firearms training for responsible citizens in West Virginia.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Training</h4>
+                    <a href="courses.html">All Courses</a>
+                    <a href="schedule.html">Class Schedule</a>
+                    <a href="church-security.html">Church Security</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="intel.html">Intel Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="legal/terms.html">Terms of Service</a>
+                    <a href="legal/privacy.html">Privacy Policy</a>
+                    <a href="legal/refunds.html">Refund Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountaineer Dynamics Institute. All rights reserved.</p>
+                <p>304-406-3045 • train@mountaineerdynamics.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll respond within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

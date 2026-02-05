@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Mountaineer Dynamics Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 3rem;
+            align-items: start;
+        }
+        @media (max-width: 992px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .checkout-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--mdi-gray-dark);
+            border-radius: var(--radius-md);
+        }
+        .checkout-step {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--mdi-gray-light);
+        }
+        .checkout-step.active {
+            color: var(--mdi-gold);
+        }
+        .checkout-step.completed {
+            color: var(--success);
+        }
+        .step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--mdi-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        .checkout-step.active .step-number {
+            background: var(--mdi-gold);
+            color: var(--mdi-black);
+        }
+        .checkout-step.completed .step-number {
+            background: var(--success);
+            color: white;
+        }
+        .checkout-form {
+            background: var(--mdi-gray-dark);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+        }
+        .checkout-form h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--mdi-gray);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .order-summary {
+            background: var(--mdi-gray-dark);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            position: sticky;
+            top: 100px;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--mdi-gray);
+        }
+        .order-item:last-of-type {
+            border-bottom: none;
+        }
+        .order-item-name {
+            font-weight: 500;
+        }
+        .order-item-meta {
+            font-size: 0.85rem;
+            color: var(--mdi-gray-light);
+        }
+        .waiver-box {
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 1rem;
+            background: var(--mdi-charcoal);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            color: var(--mdi-gray-light);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .signature-pad {
+            border: 2px dashed var(--mdi-gray);
+            border-radius: var(--radius-sm);
+            background: var(--mdi-charcoal);
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--mdi-gray-light);
+            margin-bottom: 1rem;
+            cursor: crosshair;
+        }
+        .id-upload {
+            border: 2px dashed var(--mdi-gray);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+        .id-upload:hover {
+            border-color: var(--mdi-gold);
+            background: rgba(201, 169, 97, 0.05);
+        }
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .payment-method {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--mdi-gray);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+        .payment-method.active {
+            border-color: var(--mdi-gold);
+            background: rgba(201, 169, 97, 0.1);
+        }
+        .card-icons {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 0.5rem;
+            font-size: 1.5rem;
+        }
+        .step-content {
+            display: none;
+        }
+        .step-content.active {
+            display: block;
+        }
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            padding: 1rem;
+            background: rgba(40, 167, 69, 0.1);
+            border-radius: var(--radius-sm);
+            color: var(--success);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="logo">
+                <div>
+                    <div class="logo-text">MDI</div>
+                    <div class="logo-tagline">Mountaineer Dynamics</div>
+                </div>
+            </a>
+            <div class="nav-cta">
+                <a href="tel:304-406-3045" class="nav-phone">
+                    Need help? 304-406-3045
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Content -->
+    <section class="section section-dark" style="padding-top: 7rem;">
+        <div class="container">
+            <!-- Progress Steps -->
+            <div class="checkout-steps">
+                <div class="checkout-step active" data-step="1">
+                    <span class="step-number">1</span>
+                    <span>Information</span>
+                </div>
+                <div class="checkout-step" data-step="2">
+                    <span class="step-number">2</span>
+                    <span>ID Verification</span>
+                </div>
+                <div class="checkout-step" data-step="3">
+                    <span class="step-number">3</span>
+                    <span>Waiver</span>
+                </div>
+                <div class="checkout-step" data-step="4">
+                    <span class="step-number">4</span>
+                    <span>Payment</span>
+                </div>
+            </div>
+
+            <div class="checkout-container">
+                <div class="checkout-main">
+                    <!-- Step 1: Customer Information -->
+                    <div class="checkout-form step-content active" data-step="1">
+                        <h2>Contact Information</h2>
+                        <form id="infoForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">First Name *</label>
+                                    <input type="text" class="form-input" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name *</label>
+                                    <input type="text" class="form-input" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-input" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-input" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Date of Birth *</label>
+                                <input type="date" class="form-input" name="dob" required>
+                                <small style="color: var(--mdi-gray-light);">Must be 18+ for handgun, 21+ for some courses</small>
+                            </div>
+                            
+                            <h3 style="margin: 2rem 0 1rem;">Billing Address</h3>
+                            <div class="form-group">
+                                <label class="form-label">Street Address *</label>
+                                <input type="text" class="form-input" name="address" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">City *</label>
+                                    <input type="text" class="form-input" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">State *</label>
+                                    <select class="form-select" name="state" required>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="KY">Kentucky</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">ZIP Code *</label>
+                                    <input type="text" class="form-input" name="zip" required pattern="[0-9]{5}">
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1rem;">
+                                Continue to Verification →
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Step 2: ID Verification -->
+                    <div class="checkout-form step-content" data-step="2">
+                        <h2>ID Verification</h2>
+                        <p style="color: var(--mdi-gray-light); margin-bottom: 1.5rem;">
+                            West Virginia law requires age verification for firearms training. Please upload a 
+                            clear photo of your government-issued ID.
+                        </p>
+                        
+                        <div class="id-upload" id="idUpload">
+                            <input type="file" id="idFile" accept="image/*,.pdf" style="display: none;">
+                            <div>
+                                <div style="font-size: 3rem; margin-bottom: 1rem;">📄</div>
+                                <p>Click to upload or drag and drop</p>
+                                <p style="color: var(--mdi-gray-light); font-size: 0.85rem;">Driver's License, State ID, or Passport</p>
+                                <p style="color: var(--mdi-gray-light); font-size: 0.85rem;">JPG, PNG, or PDF up to 5MB</p>
+                            </div>
+                        </div>
+                        
+                        <div id="uploadPreview" style="display: none; margin-bottom: 1.5rem;">
+                            <p style="color: var(--success);">✓ ID Uploaded Successfully</p>
+                        </div>
+                        
+                        <p style="color: var(--mdi-gray-light); font-size: 0.85rem; margin-bottom: 1.5rem;">
+                            🔒 Your ID is encrypted and stored securely. It will only be used for age verification 
+                            and will be deleted 30 days after your course.
+                        </p>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <button type="button" class="btn btn-outline" onclick="goToStep(1)">← Back</button>
+                            <button type="button" class="btn btn-primary btn-lg" style="flex: 1;" onclick="goToStep(3)">
+                                Continue to Waiver →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Digital Waiver -->
+                    <div class="checkout-form step-content" data-step="3">
+                        <h2>Liability Waiver</h2>
+                        <p style="color: var(--mdi-gray-light); margin-bottom: 1rem;">
+                            Please read and sign the liability waiver below.
+                        </p>
+                        
+                        <div class="waiver-box">
+                            <h4>RELEASE AND WAIVER OF LIABILITY</h4>
+                            <p>
+                                In consideration of being permitted to participate in firearms training activities 
+                                conducted by Mountaineer Dynamics Institute ("MDI"), I hereby agree to the following:
+                            </p>
+                            <p>
+                                <strong>1. ASSUMPTION OF RISK:</strong> I understand that firearms training involves 
+                                inherent risks, including but not limited to: injury from discharged firearms, hearing 
+                                damage, eye injuries, and other physical harm. I voluntarily assume all such risks.
+                            </p>
+                            <p>
+                                <strong>2. RELEASE:</strong> I hereby release, discharge, and hold harmless MDI, its 
+                                officers, directors, employees, agents, and instructors from any and all claims, 
+                                demands, or causes of action arising from my participation in training activities.
+                            </p>
+                            <p>
+                                <strong>3. MEDICAL CONDITION:</strong> I certify that I am in good physical health and 
+                                have no medical conditions that would prevent safe participation in firearms training.
+                            </p>
+                            <p>
+                                <strong>4. COMPLIANCE:</strong> I agree to follow all safety rules and instructor 
+                                directions at all times. I understand that failure to comply may result in immediate 
+                                dismissal from the course without refund.
+                            </p>
+                            <p>
+                                <strong>5. LEGAL STATUS:</strong> I certify that I am not prohibited by federal, state, 
+                                or local law from possessing firearms or ammunition.
+                            </p>
+                            <p>
+                                This release shall be binding upon my heirs, executors, administrators, and assigns.
+                            </p>
+                        </div>
+                        
+                        <label class="form-label">Sign Below *</label>
+                        <div class="signature-pad" id="signaturePad">
+                            Click and drag to sign
+                        </div>
+                        <button type="button" class="btn btn-outline" style="margin-bottom: 1.5rem;" onclick="clearSignature()">
+                            Clear Signature
+                        </button>
+                        
+                        <div class="form-group">
+                            <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;">
+                                <input type="checkbox" id="waiverAgree" required style="margin-top: 0.25rem;">
+                                <span style="color: var(--mdi-gray-light);">
+                                    I have read, understand, and agree to the terms of this liability waiver. 
+                                    I am 18 years of age or older.
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <button type="button" class="btn btn-outline" onclick="goToStep(2)">← Back</button>
+                            <button type="button" class="btn btn-primary btn-lg" style="flex: 1;" onclick="submitWaiver()">
+                                Continue to Payment →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Payment -->
+                    <div class="checkout-form step-content" data-step="4">
+                        <h2>Payment Information</h2>
+                        
+                        <div class="payment-methods">
+                            <div class="payment-method active" data-method="card">
+                                <div>💳 Credit Card</div>
+                                <div class="card-icons">
+                                    <span>Visa</span>
+                                    <span>MC</span>
+                                    <span>Amex</span>
+                                </div>
+                            </div>
+                            <div class="payment-method" data-method="crypto">
+                                <div>₿ Crypto</div>
+                                <div style="color: var(--mdi-gray-light); font-size: 0.8rem;">BTC/ETH</div>
+                            </div>
+                        </div>
+                        
+                        <div id="cardPayment">
+                            <div class="form-group">
+                                <label class="form-label">Cardholder Name *</label>
+                                <input type="text" class="form-input" name="cardName" placeholder="Name as it appears on card">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Card Number *</label>
+                                <input type="text" class="form-input" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Expiration *</label>
+                                    <input type="text" class="form-input" name="cardExp" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">CVV *</label>
+                                    <input type="text" class="form-input" name="cardCvv" placeholder="123" maxlength="4">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="cryptoPayment" style="display: none; text-align: center; padding: 2rem;">
+                            <p style="color: var(--mdi-gray-light); margin-bottom: 1rem;">
+                                After clicking "Complete Order", you'll be redirected to Coinbase Commerce to complete your payment.
+                            </p>
+                        </div>
+                        
+                        <div class="form-group" style="margin-top: 1.5rem;">
+                            <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;">
+                                <input type="checkbox" required style="margin-top: 0.25rem;">
+                                <span style="color: var(--mdi-gray-light);">
+                                    I agree to the <a href="legal/terms.html" style="color: var(--mdi-gold);">Terms of Service</a> 
+                                    and <a href="legal/refunds.html" style="color: var(--mdi-gold);">Refund Policy</a>.
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <button type="button" class="btn btn-outline" onclick="goToStep(3)">← Back</button>
+                            <button type="button" class="btn btn-primary btn-lg" style="flex: 1;" onclick="processPayment()">
+                                Complete Order →
+                            </button>
+                        </div>
+                        
+                        <div class="security-badge">
+                            🔒 256-bit SSL Encrypted | PCI DSS Compliant
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary Sidebar -->
+                <div class="order-summary">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem;">Order Summary</h3>
+                    
+                    <div id="orderItems">
+                        <!-- Populated by JS -->
+                    </div>
+                    
+                    <div style="border-top: 1px solid var(--mdi-gray); padding-top: 1rem; margin-top: 1rem;">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (6%)</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        <div class="summary-row total" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--mdi-gray);">
+                            <span>Total</span>
+                            <span id="total" style="color: var(--mdi-gold); font-family: var(--font-display); font-size: 1.5rem;">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: var(--mdi-charcoal); border-radius: var(--radius-sm);">
+                        <p style="font-size: 0.85rem; color: var(--mdi-gray-light);">
+                            ✓ Free rescheduling up to 7 days before<br>
+                            ✓ Immediate email confirmation<br>
+                            ✓ Calendar invite included
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js"></script>
+    <script>
+        let currentStep = 1;
+        
+        function goToStep(step) {
+            // Update step indicators
+            document.querySelectorAll('.checkout-step').forEach((el, i) => {
+                el.classList.remove('active', 'completed');
+                if (i + 1 < step) el.classList.add('completed');
+                if (i + 1 === step) el.classList.add('active');
+            });
+            
+            // Show/hide content
+            document.querySelectorAll('.step-content').forEach(el => {
+                el.classList.remove('active');
+                if (parseInt(el.dataset.step) === step) el.classList.add('active');
+            });
+            
+            currentStep = step;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Step 1 form submission
+        document.getElementById('infoForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            goToStep(2);
+        });
+        
+        // ID Upload
+        document.getElementById('idUpload')?.addEventListener('click', function() {
+            document.getElementById('idFile').click();
+        });
+        
+        document.getElementById('idFile')?.addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                document.getElementById('uploadPreview').style.display = 'block';
+                document.getElementById('idUpload').style.display = 'none';
+            }
+        });
+        
+        // Signature pad (simplified)
+        let hasSignature = false;
+        document.getElementById('signaturePad')?.addEventListener('click', function() {
+            this.innerHTML = '<div style="font-family: cursive; font-size: 2rem; color: var(--mdi-gold);">John Doe</div>';
+            hasSignature = true;
+        });
+        
+        function clearSignature() {
+            document.getElementById('signaturePad').innerHTML = 'Click and drag to sign';
+            hasSignature = false;
+        }
+        
+        function submitWaiver() {
+            const agreed = document.getElementById('waiverAgree').checked;
+            if (!agreed) {
+                alert('Please agree to the waiver terms.');
+                return;
+            }
+            if (!hasSignature) {
+                alert('Please sign the waiver.');
+                return;
+            }
+            goToStep(4);
+        }
+        
+        // Payment method toggle
+        document.querySelectorAll('.payment-method').forEach(el => {
+            el.addEventListener('click', function() {
+                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
+                this.classList.add('active');
+                
+                const method = this.dataset.method;
+                document.getElementById('cardPayment').style.display = method === 'card' ? 'block' : 'none';
+                document.getElementById('cryptoPayment').style.display = method === 'crypto' ? 'block' : 'none';
+            });
+        });
+        
+        function processPayment() {
+            // In production, this would submit to payment processor
+            alert('Order placed successfully! You will receive a confirmation email shortly.');
+            localStorage.removeItem('mdi_cart');
+            window.location.href = 'confirmation.html';
+        }
+        
+        // Load order summary
+        function loadOrderSummary() {
+            const cart = JSON.parse(localStorage.getItem('mdi_cart') || '[]');
+            const container = document.getElementById('orderItems');
+            
+            if (cart.length === 0) {
+                window.location.href = 'cart.html';
+                return;
+            }
+            
+            container.innerHTML = cart.map(item => `
+                <div class="order-item">
+                    <div>
+                        <div class="order-item-name">${item.name}</div>
+                        <div class="order-item-meta">${item.date} • ${item.location}</div>
+                    </div>
+                    <div>$${item.price}</div>
+                </div>
+            `).join('');
+            
+            const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+            const tax = subtotal * 0.06;
+            const total = subtotal + tax;
+            
+            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+        }
+        
+        loadOrderSummary();
+    </script>
+</body>
+</html>

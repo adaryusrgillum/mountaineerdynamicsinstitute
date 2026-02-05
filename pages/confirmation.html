@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed | Mountaineer Dynamics Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .confirmation-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            animation: scaleIn 0.5s ease-out;
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .confirmation-card {
+            background: var(--mdi-gray-dark);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        .confirmation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--mdi-gray);
+            margin-bottom: 1.5rem;
+        }
+        .order-number {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--mdi-gold);
+        }
+        .course-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--mdi-gray);
+        }
+        .course-item:last-of-type {
+            border-bottom: none;
+        }
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--mdi-charcoal);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .course-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        .course-meta {
+            color: var(--mdi-gray-light);
+            font-size: 0.9rem;
+        }
+        .next-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .step-card {
+            background: var(--mdi-gray-dark);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+        .step-card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .step-card h4 {
+            margin-bottom: 0.5rem;
+        }
+        .step-card p {
+            color: var(--mdi-gray-light);
+            font-size: 0.9rem;
+        }
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--mdi-gold);
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1rem;
+        }
+        .print-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="logo">
+                <div>
+                    <div class="logo-text">MDI</div>
+                    <div class="logo-tagline">Mountaineer Dynamics</div>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="schedule.html" class="nav-link">Schedule</a>
+                <a href="church-security.html" class="nav-link">Church Security</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Confirmation Content -->
+    <section class="section section-dark" style="padding-top: 7rem;">
+        <div class="container">
+            <div class="confirmation-container">
+                <div class="success-icon">✓</div>
+                
+                <h1 style="font-family: var(--font-display); font-size: 2.5rem;">ORDER CONFIRMED</h1>
+                <p style="color: var(--mdi-gray-light); font-size: 1.1rem; margin-bottom: 1rem;">
+                    Thank you for your registration! We're excited to see you on the range.
+                </p>
+                <p style="color: var(--mdi-gray-light);">
+                    A confirmation email has been sent to <strong id="customerEmail">your email address</strong>
+                </p>
+                
+                <div class="confirmation-card">
+                    <div class="confirmation-header">
+                        <div>
+                            <span style="color: var(--mdi-gray-light);">Order Number</span>
+                            <div class="order-number" id="orderNumber">MDI-2024-12345</div>
+                        </div>
+                        <button class="print-btn" onclick="window.print()">
+                            🖨️ Print Receipt
+                        </button>
+                    </div>
+                    
+                    <div id="courseList">
+                        <div class="course-item">
+                            <div class="course-icon">🎯</div>
+                            <div class="course-details">
+                                <h4>Concealed Carry Fundamentals</h4>
+                                <div class="course-meta">
+                                    📅 January 18, 2025 • 9:00 AM - 5:00 PM<br>
+                                    📍 Morgantown Range
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; padding-top: 1rem; margin-top: 1rem; border-top: 1px solid var(--mdi-gray);">
+                        <span>Total Paid</span>
+                        <span style="color: var(--mdi-gold); font-family: var(--font-display); font-size: 1.5rem;" id="totalPaid">$275.00</span>
+                    </div>
+                </div>
+                
+                <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1rem;">WHAT'S NEXT</h2>
+                
+                <div class="next-steps">
+                    <div class="step-card">
+                        <div class="step-card-icon">📧</div>
+                        <h4>Check Your Email</h4>
+                        <p>You'll receive a confirmation with course details, location map, and what to bring.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-card-icon">📅</div>
+                        <h4>Add to Calendar</h4>
+                        <p>Click the link in your email to add the course to your calendar.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-card-icon">📋</div>
+                        <h4>Prepare Your Gear</h4>
+                        <p>Review the gear list and required items for your course.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-card-icon">🚗</div>
+                        <h4>Arrive Early</h4>
+                        <p>Plan to arrive 15 minutes early for check-in and safety briefing.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; padding: 2rem; background: var(--mdi-charcoal); border-radius: var(--radius-md);">
+                    <h3 style="margin-bottom: 1rem;">Questions?</h3>
+                    <p style="color: var(--mdi-gray-light); margin-bottom: 1rem;">
+                        Our team is here to help. Contact us anytime.
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="tel:304-406-3045" class="btn btn-outline">📞 304-406-3045</a>
+                        <a href="mailto:train@mountaineerdynamics.com" class="btn btn-outline">✉️ Email Us</a>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem;">
+                    <a href="courses.html" class="btn btn-primary btn-lg">Browse More Courses</a>
+                    <a href="../index.html" class="btn btn-outline" style="margin-left: 1rem;">Return Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountaineer Dynamics Institute. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Generate random order number
+        const orderNum = 'MDI-' + new Date().getFullYear() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase();
+        document.getElementById('orderNumber').textContent = orderNum;
+    </script>
+</body>
+</html>

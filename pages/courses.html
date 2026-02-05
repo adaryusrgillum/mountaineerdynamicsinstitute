@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Catalog | Mountaineer Dynamics Institute</title>
+    <meta name="description" content="Browse all firearms training courses - handgun basics, CCW, rifle dynamics, and church security training in West Virginia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="logo">
+                <div>
+                    <div class="logo-text">MDI</div>
+                    <div class="logo-tagline">Mountaineer Dynamics</div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="courses.html" class="active">Courses</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="church-security.html">Church Security</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="intel.html">Intel</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="tel:304-406-3045" class="nav-phone">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    304-406-3045
+                </a>
+                <a href="schedule.html" class="btn btn-primary">Book Now</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="padding: 8rem 2rem 4rem; background: var(--mdi-charcoal);">
+        <div class="container">
+            <span class="section-label">Our Training Programs</span>
+            <h1 class="section-title">Course Catalog</h1>
+            <p class="section-subtitle">Comprehensive firearms training from beginner to advanced levels.</p>
+        </div>
+    </section>
+
+    <!-- Course Filters -->
+    <section class="section section-dark" style="padding-top: 2rem;">
+        <div class="container">
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 3rem;">
+                <button class="btn btn-outline filter-btn active" data-filter="all">All Courses</button>
+                <button class="btn btn-outline filter-btn" data-filter="handgun">Handgun</button>
+                <button class="btn btn-outline filter-btn" data-filter="rifle">Rifle</button>
+                <button class="btn btn-outline filter-btn" data-filter="ccw">CCW</button>
+                <button class="btn btn-outline filter-btn" data-filter="security">Security</button>
+            </div>
+
+            <!-- Handgun Courses -->
+            <div id="handgun" class="course-section">
+                <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Handgun Progression</h2>
+                <div class="courses-grid">
+                    <div class="course-card" data-category="handgun">
+                        <div class="course-card-image">
+                            <img src="../Gemini_Generated_Image_3tiaty3tiaty3tia.png" alt="Handgun Basics">
+                            <span class="course-card-badge">Beginner</span>
+                        </div>
+                        <div class="course-card-content">
+                            <span class="course-card-category">Handgun • Course 1</span>
+                            <h3 class="course-card-title">Handgun Basics</h3>
+                            <p class="course-card-desc">Foundation course covering safety, grip, stance, sight alignment, and trigger control. Perfect for first-time shooters.</p>
+                            <ul style="color: var(--mdi-gray-light); font-size: 0.9rem; margin: 1rem 0;">
+                                <li>✓ 4-hour classroom + range session</li>
+                                <li>✓ No prior experience needed</li>
+                                <li>✓ Firearm rental available</li>
+                            </ul>
+                            <div class="course-card-meta">
+                                <span class="course-card-price">$150</span>
+                                <a href="schedule.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-category="handgun ccw">
+                        <div class="course-card-image">
+                            <img src="../Gemini_Generated_Image_sqjtyqsqjtyqsqjt.png" alt="CCW Legalities">
+                            <span class="course-card-badge">Intermediate</span>
+                        </div>
+                        <div class="course-card-content">
+                            <span class="course-card-category">Handgun • Course 2</span>
+                            <h3 class="course-card-title">CCW & Legalities</h3>
+                            <p class="course-card-desc">West Virginia concealed carry laws, use of force, storage requirements, and practical carry techniques.</p>
+                            <ul style="color: var(--mdi-gray-light); font-size: 0.9rem; margin: 1rem 0;">
+                                <li>✓ WV CCW permit preparation</li>
+                                <li>✓ Legal scenarios & case studies</li>
+                                <li>✓ Holster draw techniques</li>
+                            </ul>
+                            <div class="course-card-meta">
+                                <span class="course-card-price">$175</span>
+                                <a href="schedule.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-category="handgun">
+                        <div class="course-card-image">
+                            <img src="../Gemini_Generated_Image_vt54ubvt54ubvt54 (1).png" alt="Advanced Handgun">
+                            <span class="course-card-badge">Advanced</span>
+                        </div>
+                        <div class="course-card-content">
+                            <span class="course-card-category">Handgun • Course 3</span>
+                            <h3 class="course-card-title">Advanced Handgun</h3>
+                            <p class="course-card-desc">Stress shooting, multiple targets, movement, low-light techniques, and malfunction clearance.</p>
+                            <ul style="color: var(--mdi-gray-light); font-size: 0.9rem; margin: 1rem 0;">
+                                <li>✓ Prerequisite: Course 1 & 2</li>
+                                <li>✓ 500+ rounds required</li>
+                                <li>✓ Scenario-based training</li>
+                            </ul>
+                            <div class="course-card-meta">
+                                <span class="course-card-price">$250</span>
+                                <a href="schedule.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rifle Courses -->
+            <div id="rifle" class="course-section" style="margin-top: 4rem;">
+                <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Rifle Dynamics</h2>
+                <div class="courses-grid">
+                    <div class="course-card" data-category="rifle">
+                        <div class="course-card-image">
+                            <img src="../Gemini_Generated_Image_thd24pthd24pthd2.png" alt="Rifle Dynamics 1">
+                            <span class="course-card-badge">2-Day Course</span>
+                        </div>
+                        <div class="course-card-content">
+                            <span class="course-card-category">Rifle • Level 1</span>
+                            <h3 class="course-card-title">Rifle Dynamics Level 1</h3>
+                            <p class="course-card-desc">AR-15/Modern sporting rifle fundamentals: zeroing, shooting positions, reloads, and transitions.</p>
+                            <ul style="color: var(--mdi-gray-light); font-size: 0.9rem; margin: 1rem 0;">
+                                <li>✓ 2-day intensive (16 hours)</li>
+                                <li>✓ 500 rounds minimum</li>
+                                <li>✓ 50-200 yard shooting</li>
+                            </ul>
+                            <div class="course-card-meta">
+                                <span class="course-card-price">$300</span>
+                                <a href="schedule.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-category="rifle">
+                        <div class="course-card-image">
+                            <img src="../Gemini_Generated_Image_c8jjxpc8jjxpc8jj.png" alt="Rifle Dynamics 2">
+                            <span class="course-card-badge">2-Day Course</span>
+                        </div>
+                        <div class="course-card-content">
+                            <span class="course-card-category">Rifle • Level 2</span>
+                            <h3 class="course-card-title">Rifle Dynamics Level 2</h3>
+                            <p class="course-card-desc">Advanced rifle work: barricade shooting, vehicle operations, team movements, and stress inoculation.</p>
+                            <ul style="color: var(--mdi-gray-light); font-size: 0.9rem; margin: 1rem 0;">
+                                <li>✓ Prerequisite: Level 1</li>
+                                <li>✓ 800 rounds minimum</li>
+                                <li>✓ Force-on-force exercises</li>
+                            </ul>
+                            <div class="course-card-meta">
+                                <span class="course-card-price">$400</span>
+                                <a href="schedule.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Courses -->
+            <div id="security" class="course-section" style="margin-top: 4rem;">
+                <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Church & Business Security</h2>
+                <div class="courses-grid">
+                    <div class="course-card" data-category="security">
+                        <div class="course-card-image">
+                            <img src="../Gemini_Generated_Image_c8jjxpc8jjxpc8jj.png" alt="Church Security">
+                            <span class="course-card-badge">Custom Program</span>
+                        </div>
+                        <div class="course-card-content">
+                            <span class="course-card-category">Security</span>
+                            <h3 class="course-card-title">Church Security Team Training</h3>
+                            <p class="course-card-desc">Comprehensive security training for houses of worship including threat assessment, response protocols, and team coordination.</p>
+                            <ul style="color: var(--mdi-gray-light); font-size: 0.9rem; margin: 1rem 0;">
+                                <li>✓ Custom curriculum for your facility</li>
+                                <li>✓ On-site assessment included</li>
+                                <li>✓ Team discounts available</li>
+                            </ul>
+                            <div class="course-card-meta">
+                                <span class="course-card-price">From $400</span>
+                                <a href="church-security.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Get Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Private Lessons -->
+            <div id="private" class="course-section" style="margin-top: 4rem;">
+                <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Private Lessons</h2>
+                <div class="courses-grid">
+                    <div class="course-card" data-category="handgun rifle">
+                        <div class="course-card-image">
+                            <img src="../Gemini_Generated_Image_vt54ubvt54ubvt54 (1).png" alt="Private Lessons">
+                            <span class="course-card-badge">Flexible</span>
+                        </div>
+                        <div class="course-card-content">
+                            <span class="course-card-category">1-on-1 Instruction</span>
+                            <h3 class="course-card-title">Private Shooting Lessons</h3>
+                            <p class="course-card-desc">One-on-one personalized instruction tailored to your skill level, goals, and schedule. Handgun or rifle.</p>
+                            <ul style="color: var(--mdi-gray-light); font-size: 0.9rem; margin: 1rem 0;">
+                                <li>✓ Customized curriculum</li>
+                                <li>✓ Flexible scheduling</li>
+                                <li>✓ All skill levels welcome</li>
+                            </ul>
+                            <div class="course-card-meta">
+                                <span class="course-card-price">$100/hr</span>
+                                <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Multi-State CCW -->
+            <div id="multistate" class="course-section" style="margin-top: 4rem;">
+                <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Multi-State CCW</h2>
+                <div class="courses-grid">
+                    <div class="course-card" data-category="ccw">
+                        <div class="course-card-image">
+                            <img src="../Gemini_Generated_Image_3tiaty3tiaty3tia.png" alt="Multi-State CCW">
+                            <span class="course-card-badge">37+ States</span>
+                        </div>
+                        <div class="course-card-content">
+                            <span class="course-card-category">CCW</span>
+                            <h3 class="course-card-title">Multi-State CCW Certification</h3>
+                            <p class="course-card-desc">Earn permits recognized in 37+ states. Covers varying state laws, reciprocity, and travel considerations.</p>
+                            <ul style="color: var(--mdi-gray-light); font-size: 0.9rem; margin: 1rem 0;">
+                                <li>✓ Utah & Arizona non-resident permits</li>
+                                <li>✓ State law comparison</li>
+                                <li>✓ Fingerprinting assistance</li>
+                            </ul>
+                            <div class="course-card-meta">
+                                <span class="course-card-price">$200</span>
+                                <a href="schedule.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-text">MDI</div>
+                <p class="footer-desc">Professional firearms training for civilians, security teams, and law enforcement across West Virginia.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="courses.html">All Courses</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="church-security.html">Church Security</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-contact">
+                    <li><span class="footer-contact-icon">📞</span><a href="tel:304-406-3045">304-406-3045</a></li>
+                    <li><span class="footer-contact-icon">✉️</span><a href="mailto:info@mountaineerdynamics.com">info@mountaineerdynamics.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Mountaineer Dynamics Institute. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Course filtering
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.course-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category.includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

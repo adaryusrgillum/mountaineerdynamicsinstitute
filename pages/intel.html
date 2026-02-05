@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intel Blog | Mountaineer Dynamics Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .intel-hero {
+            background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95));
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        .intel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .intel-card {
+            background: var(--mdi-gray-dark);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: transform var(--transition-base);
+        }
+        .intel-card:hover {
+            transform: translateY(-5px);
+        }
+        .intel-image {
+            height: 200px;
+            background: var(--mdi-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .intel-content {
+            padding: 1.5rem;
+        }
+        .intel-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(201, 169, 97, 0.2);
+            color: var(--mdi-gold);
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+        .intel-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+        .intel-excerpt {
+            color: var(--mdi-gray-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .intel-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--mdi-gray-light);
+            font-size: 0.85rem;
+        }
+        .featured-post {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--mdi-gray-dark);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+        @media (max-width: 768px) {
+            .featured-post { grid-template-columns: 1fr; }
+        }
+        .featured-image {
+            min-height: 300px;
+            background: linear-gradient(rgba(10, 10, 10, 0.3), rgba(10, 10, 10, 0.3)), url('../Gemini_Generated_Image_3tiaty3tiaty3tia.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .featured-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .category-filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .category-btn {
+            padding: 0.5rem 1.25rem;
+            background: var(--mdi-gray-dark);
+            border: 1px solid var(--mdi-gray);
+            border-radius: 2rem;
+            color: var(--mdi-white);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+        .category-btn:hover, .category-btn.active {
+            background: var(--mdi-gold);
+            border-color: var(--mdi-gold);
+            color: var(--mdi-black);
+        }
+        .newsletter-box {
+            background: linear-gradient(135deg, var(--mdi-gray-dark) 0%, var(--mdi-charcoal) 100%);
+            border: 1px solid var(--mdi-gold);
+            border-radius: var(--radius-md);
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 1.5rem auto 0;
+        }
+        @media (max-width: 576px) {
+            .newsletter-form { flex-direction: column; }
+        }
+        .newsletter-form input {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="logo">
+                <div>
+                    <div class="logo-text">MDI</div>
+                    <div class="logo-tagline">Mountaineer Dynamics</div>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="schedule.html" class="nav-link">Schedule</a>
+                <a href="church-security.html" class="nav-link">Church Security</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="intel.html" class="nav-link active">Intel</a>
+            </div>
+            <div class="nav-cta">
+                <a href="cart.html" class="btn btn-outline btn-sm">Cart (<span id="cartCount">0</span>)</a>
+                <a href="schedule.html" class="btn btn-primary btn-sm">Book Training</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="intel-hero">
+        <div class="container">
+            <span class="section-tag">MDI Intel</span>
+            <h1 style="font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4rem);">
+                TACTICAL <span class="gold">KNOWLEDGE</span>
+            </h1>
+            <p style="font-size: 1.1rem; color: var(--mdi-gray-light); max-width: 600px; margin: 1rem auto;">
+                Training tips, gear reviews, legal updates, and tactical insights from our instructors.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="section section-dark" style="padding-top: 0; transform: translateY(-2rem);">
+        <div class="container">
+            <div class="featured-post">
+                <div class="featured-image"></div>
+                <div class="featured-content">
+                    <span class="intel-category">Featured</span>
+                    <h2 style="font-family: var(--font-display); font-size: 1.75rem; margin-bottom: 1rem;">
+                        WV Constitutional Carry: What You Need to Know in 2025
+                    </h2>
+                    <p style="color: var(--mdi-gray-light); margin-bottom: 1.5rem; line-height: 1.7;">
+                        West Virginia's constitutional carry law allows residents to carry concealed without 
+                        a permit. But understanding the nuances—reciprocity, prohibited places, and 
+                        use-of-force law—is critical. Here's everything you need to know.
+                    </p>
+                    <div class="intel-meta" style="margin-bottom: 1.5rem;">
+                        <span>By Marcus Cole • Jan 10, 2025</span>
+                        <span>8 min read</span>
+                    </div>
+                    <a href="#" class="btn btn-primary">Read Full Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="section section-dark" style="padding-top: 0;">
+        <div class="container">
+            <div class="category-filters">
+                <button class="category-btn active">All Posts</button>
+                <button class="category-btn">Training Tips</button>
+                <button class="category-btn">Gear Reviews</button>
+                <button class="category-btn">Legal Updates</button>
+                <button class="category-btn">Mindset</button>
+                <button class="category-btn">Church Security</button>
+            </div>
+            
+            <div class="intel-grid">
+                <article class="intel-card">
+                    <div class="intel-image">🎒</div>
+                    <div class="intel-content">
+                        <span class="intel-category">Gear Review</span>
+                        <h3 class="intel-title">Best Concealed Carry Holsters for Winter 2025</h3>
+                        <p class="intel-excerpt">
+                            Winter clothing changes everything about concealed carry. We tested 8 popular 
+                            holsters to find the best options for layered carry.
+                        </p>
+                        <div class="intel-meta">
+                            <span>Jan 8, 2025</span>
+                            <span>5 min read</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="intel-card">
+                    <div class="intel-image">🎯</div>
+                    <div class="intel-content">
+                        <span class="intel-category">Training Tips</span>
+                        <h3 class="intel-title">Dry Fire Drills You Can Practice at Home</h3>
+                        <p class="intel-excerpt">
+                            You don't need to be at the range to improve. These 5 dry fire drills will 
+                            sharpen your skills from your living room—safely and effectively.
+                        </p>
+                        <div class="intel-meta">
+                            <span>Jan 5, 2025</span>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="intel-card">
+                    <div class="intel-image">⛪</div>
+                    <div class="intel-content">
+                        <span class="intel-category">Church Security</span>
+                        <h3 class="intel-title">Building Your Church Security Team: A Step-by-Step Guide</h3>
+                        <p class="intel-excerpt">
+                            From volunteer recruitment to training protocols, here's how to establish 
+                            an effective security ministry at your house of worship.
+                        </p>
+                        <div class="intel-meta">
+                            <span>Jan 2, 2025</span>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="intel-card">
+                    <div class="intel-image">🧠</div>
+                    <div class="intel-content">
+                        <span class="intel-category">Mindset</span>
+                        <h3 class="intel-title">The OODA Loop: Decision-Making Under Stress</h3>
+                        <p class="intel-excerpt">
+                            Colonel John Boyd's OODA Loop concept revolutionized combat tactics. Here's 
+                            how to apply it to your personal defense strategy.
+                        </p>
+                        <div class="intel-meta">
+                            <span>Dec 28, 2024</span>
+                            <span>7 min read</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="intel-card">
+                    <div class="intel-image">⚖️</div>
+                    <div class="intel-content">
+                        <span class="intel-category">Legal Updates</span>
+                        <h3 class="intel-title">Understanding Castle Doctrine in West Virginia</h3>
+                        <p class="intel-excerpt">
+                            What rights do you have when defending your home? We break down WV's Castle 
+                            Doctrine and what it means for homeowners.
+                        </p>
+                        <div class="intel-meta">
+                            <span>Dec 22, 2024</span>
+                            <span>8 min read</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="intel-card">
+                    <div class="intel-image">🔫</div>
+                    <div class="intel-content">
+                        <span class="intel-category">Training Tips</span>
+                        <h3 class="intel-title">First-Time Gun Owner? Start Here</h3>
+                        <p class="intel-excerpt">
+                            Just bought your first firearm? Congratulations! Here's your roadmap to 
+                            becoming a safe, confident, and responsible gun owner.
+                        </p>
+                        <div class="intel-meta">
+                            <span>Dec 18, 2024</span>
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-outline">Load More Articles</button>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="newsletter-box">
+                <h2 style="font-family: var(--font-display); font-size: 1.75rem;">
+                    GET <span class="gold">INTEL</span> DELIVERED
+                </h2>
+                <p style="color: var(--mdi-gray-light);">
+                    Training tips, gear reviews, and legal updates straight to your inbox. 
+                    No spam, ever.
+                </p>
+                <form class="newsletter-form">
+                    <input type="email" class="form-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p style="font-size: 0.8rem; color: var(--mdi-gray-light); margin-top: 1rem;">
+                    Join 2,500+ subscribers. Unsubscribe anytime.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div>
+                            <div class="logo-text">MDI</div>
+                            <div class="logo-tagline">Mountaineer Dynamics</div>
+                        </div>
+                    </div>
+                    <p>Professional firearms training for responsible citizens in West Virginia.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Training</h4>
+                    <a href="courses.html">All Courses</a>
+                    <a href="schedule.html">Class Schedule</a>
+                    <a href="church-security.html">Church Security</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="intel.html">Intel Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="legal/terms.html">Terms of Service</a>
+                    <a href="legal/privacy.html">Privacy Policy</a>
+                    <a href="legal/refunds.html">Refund Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountaineer Dynamics Institute. All rights reserved.</p>
+                <p>304-406-3045 • train@mountaineerdynamics.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Category filter functionality
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // In production, this would filter the articles
+            });
+        });
+    </script>
+</body>
+</html>
